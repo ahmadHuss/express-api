@@ -9,7 +9,6 @@ import config from '../config';
 const db = new Sequelize(
   process.env.DATABASE_URL,
   {
-    host: 'ec2-3-213-146-52.compute-1.amazonaws.com',
     dialect: 'postgres',
     ssl: true,
     protocol: 'postgres',
