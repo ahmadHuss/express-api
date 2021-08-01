@@ -13,4 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 // Routes for the API
 app.use('/api', apiController);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000, function() {
+  console.log('Server started successfully.');
+});
