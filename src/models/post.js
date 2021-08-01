@@ -9,9 +9,11 @@ import config from '../config';
 const db = new Sequelize(
   process.env.DATABASE_URL,
   {
-    dialect: config.db.database,
+    dialect: 'postgres',
     protocol: 'postgres',
-    logging:  true //false
+    dialectOptions: {
+      ssl: true
+    }
   }
 );
 
