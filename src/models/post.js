@@ -7,12 +7,11 @@ import config from '../config';
 
 // Connecting to the database
 const db = new Sequelize(
-  config.db.database,
-  config.db.user,
-  config.db.password,
+  process.env.DATABASE_URL,
   {
-    host: config.db.host,
-    dialect: config.db.dialect
+    dialect: config.db.database,
+    protocol: 'postgres',
+    logging:  true //false
   }
 );
 
