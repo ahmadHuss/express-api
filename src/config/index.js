@@ -1,10 +1,10 @@
 export default {
   db: {
-    dialect: process.env.DB_CONNECTION, // 'mysql'|'sqlite'|'postgres'|'mssql'
-    host: process.env.DB_HOST, // Your host, by default is localhost
-    database: process.env.DB_DATABASE, // Your database name
-    user: process.env.DB_USERNAME, // Your Postgres user, by default is postgres
-    password: process.env.DB_PASSWORD // Your Db password, sometimes by default
+    dialect: 'postgres', // 'mysql'|'sqlite'|'postgres'|'mssql'
+    host: 'https://express-rest-00.herokuapp.com/', // Your host, by default is localhost
+    database: 'd4akfurhist5n0', // Your database name
+    user: 'jzyfgccgincddz', // Your Postgres user, by default is postgres
+    password: 'ce3c05c89979a0398f14df23bf14adef66989dcbe534dc08d61a54a0e4c5f298'// Your Db password, sometimes by default
     //is empty.
   }
 };
