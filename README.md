@@ -6,7 +6,7 @@ This project is implemented as a test.
 
 To use the .env variables please create the file (.env) at the root of your application.
 ```  
-DATABASE_URL=connection://username:password@host:port
+DATABASE_URL=connection://username:password@host:port/database
 ```
 
 Localhost:
@@ -55,6 +55,7 @@ You can edit values according to your own database personal preference. I am usi
 #### Method: `GET`
 #### Retrieve single post:
 `https://express-rest-00.herokuapp.com/api/post/:id`
+
 `https://express-rest-00.herokuapp.com/api/post/1`
 
 #### Output:
@@ -109,6 +110,7 @@ You can edit values according to your own database personal preference. I am usi
 #### Method: `PUT`
 #### Update the post:
 `https://express-rest-00.herokuapp.com/api/post/:id`
+
 `https://express-rest-00.herokuapp.com/api/post/1`
 
 ### Body:
@@ -146,6 +148,7 @@ You can edit values according to your own database personal preference. I am usi
 #### Method: `DELETE`
 #### Remove the post:
 `https://express-rest-00.herokuapp.com/api/post/:id`
+
 `https://express-rest-00.herokuapp.com/api/post/1`
 
 #### Output:
