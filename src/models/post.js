@@ -18,10 +18,7 @@ if (process.env.NODE_ENV === 'production') {
     }
   });
 } else {
-  db = new Sequelize(config.db.database, config.db.user, config.db.password, {
-    host: config.db.host,
-    dialect: config.db.dialect
-  });
+  db = new Sequelize(process.env.DATABASE_URL);
 }
 // This will remove the extra response
 const queryType = {
