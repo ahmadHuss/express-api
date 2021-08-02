@@ -6,18 +6,23 @@ import slug from 'slug';
 import config from '../config';
 
 // Connecting to the database
-const db = new Sequelize(
-  process.env.DATABASE_URL,
-  {
-    dialect: 'postgres',
+
+let db = null;
+if (process.env.NODE_ENV === 'production') {
+  db = new Sequelize(process.env.DATABASE_URL, {
     dialectOptions: {
       ssl: {
-        require: true
+        require: true,
+        rejectUnauthorized: false
       }
     }
-  }
-);
-
+  });
+} else {
+  db = new Sequelize(config.db.database, config.db.user, config.db.password, {
+    host: config.db.host,
+    dialect: config.db.dialect
+  });
+}
 // This will remove the extra response
 const queryType = {
   type: Sequelize.QueryTypes.SELECT
