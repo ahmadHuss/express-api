@@ -79,6 +79,13 @@ export function findAllPosts(callback) {
   });
 }
 
+// Find a single post by slug...
+export function findById(id, callback) {
+  db.query(`SELECT * FROM posts WHERE id = '${id}'`, queryType).then((data) => {
+    callback(data);
+  });
+}
+
 // Creating new post...
 export function createPost(text, rating, callback) {
   db.sync().then(() => {
@@ -108,8 +115,7 @@ export function updatePost(id, text, rating, callback) {
     },
     {
       where: { id: id },
-      returning: true,
-      plain: true
+      returning: true
     }
   )
     .then((rowsUpdated) => {

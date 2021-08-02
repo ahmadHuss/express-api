@@ -1,6 +1,7 @@
 import express from 'express';
 import {
   findAllPosts,
+  findById,
   createPost,
   updatePost,
   removePost
@@ -14,6 +15,25 @@ router.get('/posts', (req, res) => {
     res.json({
       response: posts
     });
+  });
+});
+
+router.get('/post/:id', (req, res) => {
+  const {
+    params: { id }
+  } = req;
+  findById(id, (singlePost) => {
+    console.log('single', singlePost);
+    if (!singlePost || singlePost.length === 0) {
+      res.send({
+        error: true,
+        message: 'Post not found'
+      });
+    } else {
+      res.json({
+        response: [singlePost]
+      });
+    }
   });
 });
 
