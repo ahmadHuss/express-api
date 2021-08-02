@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "express rest api",
   "scripts": {
-    "start": "babel-node src/app.js",
+    "start": "cross-env NODE_ENV=production babel-node src/app.js",
     "dev": "nodemon src/app.js --exec babel-node",
     "format": "prettier --write \"src/**/*.js\""
   },
@@ -12,6 +12,7 @@
     "@babel/core": "^7.14.8",
     "@babel/node": "^7.14.9",
     "@babel/preset-env": "^7.14.9",
+    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "express": "^4.16.1",
     "mysql2": "^2.2.5",
