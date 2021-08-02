@@ -8,11 +8,6 @@ import {
 
 const router = express.Router();
 
-// Get route
-router.get('/', (req, res) => {
-  res.send(`Model Post Endpoints`);
-});
-
 // GET Methods
 router.get('/posts', (req, res) => {
   findAllPosts((posts) => {
@@ -53,7 +48,7 @@ router.put('/post/:id', (req, res) => {
     if (error) {
       res.json({
         error: true,
-        details: error
+        details: error ? error : 'There was an error trying to update the post'
       });
     } else {
       res.json({
@@ -75,7 +70,7 @@ router.delete('/post/:id', (req, res) => {
     if (error) {
       res.json({
         error: true,
-        details: error
+        details: error ? error : 'There was an error trying to remove this post'
       });
     } else {
       res.json({
@@ -85,6 +80,11 @@ router.delete('/post/:id', (req, res) => {
       });
     }
   });
+});
+
+// 404
+router.get('*', function (req, res) {
+  res.status(404).send({ message: 'Not found' });
 });
 
 export default router;
