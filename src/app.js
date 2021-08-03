@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const morgan = require('morgan');
 
-import apiController from './controllers/api';
+import controller from './controllers/api';
 
 // defining the Express appServer
 const app = express();
@@ -19,7 +19,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes for the API
-app.use('/api', apiController);
+app.use('/api', controller);
+// Normal routes should return 404
+app.use('*', controller);
 
 app.listen(process.env.PORT || 3000, function () {
   console.log('Server started successfully.');

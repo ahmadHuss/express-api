@@ -102,9 +102,9 @@ router.delete('/post/:id', (req, res) => {
   });
 });
 
-// 404
+// All other routes
 router.get('*', function (req, res) {
-  res.status(404).send({ message: 'Not found' });
+  res.status(404).send({ error: true, message: `It doesn't exist.` });
 });
 
 export default router;
