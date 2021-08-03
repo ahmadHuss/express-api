@@ -2,11 +2,7 @@
 import Sequelize from 'sequelize';
 import slug from 'slug';
 
-// Configuration
-import config from '../config';
-
 // Connecting to the database
-
 let db = null;
 if (process.env.NODE_ENV === 'production') {
   db = new Sequelize(process.env.DATABASE_URL, {
