@@ -1,6 +1,6 @@
 # Express RESTAPI
 
-This project is implemented as a test for the Upwork. All `POST/PUT` endpoints also have data validation.
+This project is implemented as a test for the Upwork Client. All `POST/PUT` endpoints also have data validation.
 
 ## Use of the `.env` variables:
 
